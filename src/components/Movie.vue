@@ -3,7 +3,7 @@
     <img
       :src="movie.Poster"
       class="movie__poster" />
-    <div class="movie__Title">
+    <div class="movie__title">
       {{ movie.Title }}
     </div>
     <div>{{ movie.Year }} / {{ movie.Type }}</div>
@@ -17,25 +17,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$movie-poster-width : 80%;
 .movie{
   box-sizing: border-box;
-  padding : 20px;
-  margin : 10px;
-  background-color: lightgray;
   display : flex;
+  background-color : white;
   flex-direction: column;
   align-items: center;
+  font-size : 15px;
+  text-align : center;
+  padding : 20px;
   
   
   &__poster{
-    width : $movie-poster-width;
-    background-color: antiquewhite;
-    height : calc($movie-poster-width * 1.3);  
+    width : 80%;
+    height : calc(80% * 1.3);
+    background-color: antiquewhite;  
+    border : 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
   }
 
   &:hover{
     cursor : pointer;
   }
+
+  &__title{
+    padding : 10px;
+  }
+
 }
 </style>

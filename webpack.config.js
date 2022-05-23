@@ -31,7 +31,12 @@ module.exports = {
                 use : [
                     'vue-style-loader',
                     'css-loader',
-                    'sass-loader',
+                    {
+                        loader : 'sass-loader',
+                        options : {
+                            additionalData : '@import "~/scss/_variables";'
+                        }
+                    },
                     'postcss-loader'
                 ]
             },
@@ -55,6 +60,7 @@ module.exports = {
 
     ],
     devServer : {
+        port : 8079,
         historyApiFallback : true
     }
 

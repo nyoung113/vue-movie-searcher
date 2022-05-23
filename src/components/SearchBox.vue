@@ -3,6 +3,7 @@
     <form>
       <input
         v-model="keyword"
+        placeholder="search with keyword"
         type="text" />
       <button @click.prevent="$router.push(`${keyword}`), fetchMovieList()">
         🔎
@@ -28,37 +29,38 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    * {
-          box-sizing: border-box;
-    }
-    div {
-         display : flex;
-         justify-content : center;
-         align-items: center;
-      
+    .search-box-container {
+        height : 100px;
+        display : flex;
+        justify-content : center;
+        align-items: center;
+        background-color : white;
+        border-bottom: $border;
       form {
         width : 50%;
-        height : 50px;
+        max-width : 600px;
         display : flex;
         justify-content: center;
+        align-items: center;
 
         input{
-          height : 30px;
+          height : 40px;
+          border : $border;
+          border-radius: 20px;
+          padding-left : 20px;
           flex-grow : 1;
-          border : 1px solid lightgray;
-          border-radius: 5px;
           
         }
         input:focus{
           outline : none;
-
         }
         button {
-          border-radius: 5px;
-          width : 30px;
-          height : 30px;
+          width : 40px;
+          height : 40px;
           background-color : lightgray;
           border : none;
+          margin-left: 10px;
+          border-radius: 20px;
         }
         button:hover{
           cursor : pointer;

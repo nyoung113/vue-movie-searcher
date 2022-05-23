@@ -68,10 +68,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  * {
-    box-sizing : border-box;
-  }
   .list-containter{
+    height : 100%;
     display : flex;
     justify-content: center;
     align-items: center;
@@ -81,15 +79,28 @@ export default {
     list-style : none;
     display : grid;
     grid-template-columns : repeat(5, 1fr);
-
   }
+
+  
   .page-button{
     border : none;
-    height: 20vh;
-    border-radius : 5px;
-    background-color: lightgray;
+    height : 500px;
+    width : 40px;
     &:hover{
       cursor : pointer;
+    }
+  }
+
+    @media(max-width: $breakpoint-md) {
+      .movie-list{
+      grid-template-columns : repeat(4, 1fr);
+    }
+  }
+
+  @media(max-width: $breakpoint-sm) {
+      .movie-list{
+
+    grid-template-columns : repeat(2, 1fr);
     }
   }
 
